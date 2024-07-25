@@ -119,7 +119,25 @@
 //    }
 //    return newArray;
 // }
+
 // console.log(getCommonElements([1, 2, 3], [2, 1, 17, 19]));
 
-const a = 123;
-console.log(a > 10 ? 'hello' : 'goodbye');
+// const a = 123;
+
+// console.log(a > 10 ? 'hello' : 'goodbye');
+
+// погрався з псевдомасивом arguments
+
+// function fn1() {
+//    console.log(arguments);
+//    const arrayToArg = Array.from(arguments);
+//    console.log('this length array from arguments :', arrayToArg.length);
+
+//    for (let i = 0; i < arrayToArg.length; i++) {
+//       console.log(arrayToArg[i]);
+
+//       const addNewEl = (arrayToArg[i] += ' this new element');
+//       console.log(addNewEl);
+//    }
+// }
+// fn1(1, 2, 3, 4, 5);
