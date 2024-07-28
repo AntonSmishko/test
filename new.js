@@ -141,3 +141,123 @@
 //    }
 // }
 // fn1(1, 2, 3, 4, 5);
+
+// Object
+
+// function countTotalSalary(salaries) {
+//    let totalSalary = 0;
+//    let objKeys = Object.values(salaries);
+
+//    for (let key of objKeys) {
+//       totalSalary += key;
+//    }
+//    return totalSalary;
+// }
+
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+
+//   Знайти обєкт за іменем та повернути його ціну
+
+// function getProductPrice(productName) {
+//    const products = [
+//       { name: 'Radar', price: 1300, quantity: 4 },
+//       { name: 'Scanner', price: 2700, quantity: 3 },
+//       { name: 'Droid', price: 400, quantity: 7 },
+//       { name: 'Grip', price: 1200, quantity: 9 },
+//    ];
+//    const message = null;
+//    for (let product of products) {
+//       if (product.name === productName) {
+//          return product.price;
+//       }
+//    }
+// }
+
+// console.log(getProductPrice('Radar'));
+
+// пошук властивості та збір в один масив всіх значень/////////////
+
+// function getAllPropValues(propName) {
+//    const products = [
+//       { name: 'Radar', price: 1300, quantity: 4 },
+//       { name: 'Scanner', price: 2700, quantity: 3 },
+//       { name: 'Droid', price: 400, quantity: 7 },
+//       { name: 'Grip', price: 1200, quantity: 9 },
+//    ];
+//    const propArray = [];
+//    for (const product of products) {
+//       //   console.log(product);
+//       if (propName === 'name') {
+//          propArray.push(product.name);
+//          //  console.log(propArray);
+//       } else if (propName === 'price') {
+//          propArray.push(product.price);
+//       } else if (propName === 'quantity') {
+//          propArray.push(product.quantity);
+//       }
+//    }
+//    return propArray;
+// }
+
+//  ПОКРАЩЕНИЙ ВАРІАНТ БІЛЬШ УНІВЕРСАЛЬНИЙ   hasOwnProperty
+// function getAllPropValues(propName) {
+//    const products = [
+//       { name: 'Radar', price: 1300, quantity: 4 },
+//       { name: 'Scanner', price: 2700, quantity: 3 },
+//       { name: 'Droid', price: 400, quantity: 7 },
+//       { name: 'Grip', price: 1200, quantity: 9 },
+//    ];
+//    const propArray = [];
+//    for (const product of products) {
+//       if (product.hasOwnProperty(propName)) {
+//          propArray.push(product[propName]);
+//       }
+//    }
+//    return propArray;
+// }
+
+// console.log(getAllPropValues('name'));
+// console.log(getAllPropValues('price'));
+// console.log(getAllPropValues('quantity'));
+// console.log(getAllPropValues('123'));
+
+//  та ж функція але з використанням includes , спочатку беремо масив ключів за допомогою Object.keys
+//  а вже потім перевіряємо за допомогою includes умову
+// function getAllPropValues(propName) {
+//    const products = [
+//       { name: 'Radar', price: 1300, quantity: 4 },
+//       { name: 'Scanner', price: 2700, quantity: 3 },
+//       { name: 'Droid', price: 400, quantity: 7 },
+//       { name: 'Grip', price: 1200, quantity: 9 },
+//    ];
+//    const propArray = [];
+//    for (const product of products) {
+//       if (Object.keys(product).includes(propName)) {
+//          propArray.push(product[propName]);
+//       }
+//    }
+//    return propArray;
+// }
+
+// function calculateTotalPrice(productName) {
+//    const products = [
+//       { name: 'Radar', price: 1300, quantity: 4 },
+//       { name: 'Scanner', price: 2700, quantity: 3 },
+//       { name: 'Droid', price: 400, quantity: 7 },
+//       { name: 'Grip', price: 1200, quantity: 9 },
+//    ];
+//    console.log(productName);
+//    let total = 0;
+
+//    for (let product of products) {
+//       console.log(product);
+//       if (product.name === productName) {
+//          console.log('this true');
+//          total = product.price * product.quantity;
+//          return total;
+//       }
+//    }
+
+//    return `Product ${productName} not found!`;
+// }
+// console.log(calculateTotalPrice('not found'));
